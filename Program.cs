@@ -4,7 +4,7 @@ using System.Collections.Generic;
 void Main()
 {
 
-List<string> insults = new List<string>()
+    List<string> insults = new List<string>()
 {
     "You look like what morning breath smells like.",
     "If you tried to give me cpr I would probably throw myself back under water",
@@ -15,16 +15,19 @@ List<string> insults = new List<string>()
     "Do you have to be so...like that?"
 };
 
-string[] indexes = { };
+    List<int> indexes = new List<int>();
 
-while (indexes.Length < 3)
-{
-    Random r = new Random();
-    int candidate = r.Next(1, insults.Count - 1);
-    if (!indexes.Contains(candidate)) {
-        Console.WriteLine(candidate);
+    while (indexes.Count < 3)
+    {
+        Random r = new Random();
+        int candidate = r.Next(1, insults.Count - 1);
+        if (!indexes.Contains(candidate))
+        {
+            indexes.Add(candidate);
+            Console.WriteLine(insults[candidate]);
+            Console.WriteLine();
+        }
     }
-}
 }
 
 Main();
